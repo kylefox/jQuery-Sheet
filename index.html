@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.sheet.js" type="text/javascript" charset="utf-8"></script>
+  <title>jQuery Sheet Plugin</title>
+	<style type="text/css" media="screen">
+	  /* SHEET STUFF */
+	  .sheet { display: none; background: #fff; }
+	  /****/
+	
+		body {
+			width: 600px;
+			margin: 0 auto;
+			color: #555;
+			font: normal 14px/1.5 "Lucida Grande", Verdana, sans-serif;
+			border-top: 10px solid #e4e4e4;
+		}
+		
+		.sheet {
+		  font-size: 12px;
+		}
+		
+		.sheet h1,
+		.sheet p {
+      margin: 0 0 1.5em 0;
+		}
+		
+		a {
+			color: #ff0066;
+			text-decoration: none;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<h1>jQuery Sheet Plugin</h1>
+	
+	<ol>
+	  <li><a class="open_sheet" href="#short_inline_sheet">Inline HTML (short)</a></li>
+	  <li><a class="open_sheet" href="#long_inline_sheet">Inline HTML (long)</a></li>
+	</ol>
+	
+	<div class="sheet" id="long_inline_sheet">
+	  <h1>Inline HTML</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	
+	<div class="sheet" id="short_inline_sheet">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+	
+	
+	<script type="text/javascript" charset="utf-8">
+			
+		$(function() {
+			
+			$('.open_sheet').click(function(event) {
+				event.preventDefault();
+				$($(this).attr('href')).sheet();
+			});
+			
+		});
+			
+	</script>
+
+</body>
+</html>
